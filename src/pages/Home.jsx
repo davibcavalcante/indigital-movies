@@ -1,6 +1,14 @@
+import Header from "../components/Header";
+import MostPopularMovie from "../components/Home/MostPopularMovie";
+import MoviesList from "../components/Home/MoviesList";
+
 const Home = () => {
     return (
-        <h1>Home Page</h1>
+        <section>
+            <Header />
+            <MostPopularMovie />
+            <MoviesList />
+        </section>
     );
 }
 

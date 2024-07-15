@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        playwrite: ["Playwrite AU TAS", "cursive"],
+        raleway: ["Raleway", "sans-serif"],
+        play: ["Play", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 }

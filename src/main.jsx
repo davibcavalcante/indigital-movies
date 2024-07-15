@@ -5,6 +5,7 @@ import './styles/index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Home from './pages/Home';
+import Movie from './pages/Movie';
 import App from './App';
 
 const routes = createBrowserRouter([
@@ -15,6 +16,10 @@ const routes = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path: '/movie/:id',
+        element: <Movie />
       }
     ],
   },
