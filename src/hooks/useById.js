@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getMovieById } from "../utils/getMovies";
+import { getById } from "../utils/getMovies";
 
 const useById = (id) => {
     const [movie, setMovie] = useState(null);
@@ -9,7 +9,7 @@ const useById = (id) => {
     useEffect(() => {
         const fetchMovie = async () => {
             try {
-                const movie = await getMovieById(id);
+                const movie = await getById(id);
                 setMovie(movie);
             } catch (err) {
                 setError(err);

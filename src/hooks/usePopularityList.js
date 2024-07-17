@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getPopularityList } from "../utils/getMovies";
 
-const usePopularityList = () => {
+const usePopularityList = (bySearch) => {
     const [movieList, setMovieList] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -9,6 +9,8 @@ const usePopularityList = () => {
     const [isFetching, setIsFetching] = useState(false);
 
     useEffect(() => {
+        if (bySearch) return;
+
         const fetchMovie = async () => {
             setLoading(true);
             try {
@@ -24,7 +26,7 @@ const usePopularityList = () => {
         };
 
         fetchMovie();
-    }, [page]);
+    }, [page, bySearch]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -49,7 +51,7 @@ const usePopularityList = () => {
         }
     };
 
-    return { movieList, error, loading, page, loadMoreMovies };
+    return { movieList, error, loading, loadMoreMovies };
 };
 
 export default usePopularityList;
