@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <section className="bg-red-600 w-full min-h-20 px-4 flex items-center justify-between lg:px-8 sticky top-0 z-50">
             <section className="text-white">
-                <Link to={'/'} className="flex items-center gap-4">
+                <Link to={'/indigital-movies'} className="flex items-center gap-4">
                     <Video size={40} />
                     <h1 className="hidden text-sm font-light font-playwrite sm:block sm:text-xl">Indigital Movies</h1>
                 </Link>

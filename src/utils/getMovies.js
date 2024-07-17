@@ -6,6 +6,11 @@ export const getMostPopular = async () => {
 }
 
 export const getPopularityList = async (page) => {
-    const results = await apiFetch.get(`discover/movie?&sort_by=popularity.desc&page=${page}`);
+    const results = await apiFetch.get(`/discover/movie?&sort_by=popularity.desc&page=${page}`);
     return results.data.results;
+}
+
+export const getMovieById = async (id) => {
+    const results = await apiFetch.get(`/movie/${id}`);
+    return results.data;
 }
