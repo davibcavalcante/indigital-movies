@@ -18,7 +18,7 @@ const routes = createBrowserRouter([
         element: <Home />
       },
       {
-        path: '/movie/:id',
+        path: '/indigital-movies/movie/:id',
         element: <Movie />
       }
     ],

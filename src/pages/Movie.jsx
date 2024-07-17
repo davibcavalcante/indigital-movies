@@ -21,9 +21,12 @@ const Movie = () => {
     }
     
     return (
-        <section className={`h-screen bg-[url('https://image.tmdb.org/t/p/original${movie.backdrop_path}')] p-8 bg-cover bg-fixed bg-center overflow-y-auto md:flex md:items-center md:justify-center`}>
-            <section className="w-full max-w-96 m-auto h-fit flex flex-col rounded-2xl shadow-xl overflow-hidden md:flex-row md:w-11/12 md:max-w-none lg:w-9/12">
-                <section className="w-full md:w-6/12 xl:w-4/12">
+        <section className={`relative h-screen overflow-y-auto py-12 px-4 md:flex md:items-center md:justify-center`}>
+            <section className="fixed top-0 left-0 w-full h-full">
+                <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt="" className="min-h-full object-cover"/>
+            </section>
+            <section className="w-full max-w-96 m-auto h-fit flex flex-col rounded-2xl shadow-xl overflow-hidden z-50 md:flex-row md:w-11/12 md:max-w-none lg:w-9/12">
+                <section className="w-full z-50 md:w-6/12 xl:w-4/12">
                     <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} className="md:object-cover md:min-h-full" />
                 </section>
                 <section className="bg-zinc-900 opacity-95 w-full py-8 px-6 md:w-6/12 md:min-h-full md:max-w-full xl:w-8/12 xl:relative">
@@ -51,7 +54,7 @@ const Movie = () => {
                     <section className="bg-white p-4 rounded-xl shadow-xl flex items-center justify-center gap-4 xl:absolute xl:bottom-4 xl:left-1/2 xl:-translate-x-1/2 xl:w-10/12">
                         {movie.production_companies.map(item =>
                             item.logo_path !== null &&
-                                <img src={`https://image.tmdb.org/t/p/original/${item.logo_path}`} alt={item.name} className="w-2/6 xl:w-1/6" />
+                                <img src={`https://image.tmdb.org/t/p/original/${item.logo_path}`} alt={item.name} className="w-2/6 max-w-16 max-h-16 overflow-x-auto xl:w-1/6" />
                         )}
                     </section>
                 </section>

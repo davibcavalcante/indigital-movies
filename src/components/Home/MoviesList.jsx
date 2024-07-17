@@ -27,7 +27,7 @@ const MoviesList = () => {
                                 <div className="text-white text-lg absolute bg-zinc-800 bg-opacity-80 w-fit top-2 left-2 rounded-xl shadow-xl flex items-center gap-2 p-2">
                                     <Star color="yellow"/> {movie.vote_average.toFixed(1)}
                                 </div>
-                                <Link to={`/movie/${movie.id}`}>
+                                <Link to={`/indigital-movies/movie/${movie.id}`}>
                                     <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} className="w-full h-auto" />
                                 </Link>
                             </div>
@@ -40,7 +40,7 @@ const MoviesList = () => {
     };
 
     return (
-        <section className="bg-black min-h-screen h-auto flex flex-col gap-8 px-4 pb-20 lg:px-8">
+        <section className="bg-black min-h-screen h-auto flex flex-col gap-8 px-4 pb-20 relative z-50 lg:px-8">
             {renderMoviesInSections()}
             <button className="bg-red-600 text-white w-3/4 m-auto py-2 lg:hidden" onClick={loadMoreMovies}>
                 {!loading ? 'Mais...' :
